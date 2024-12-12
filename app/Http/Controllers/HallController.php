@@ -43,9 +43,9 @@ class HallController extends Controller
             'lecture_hall_place' => 'required', 
         ]);
 
-        DB::table('halls')->insert([
-            'lecture_hall_name' => $request->lecture_hall_name, 
-            'lecture_hall_place' => $request->lecture_hall_place, 
+        Hall::create([
+            'lecture_hall_name' => $request->lecture_hall_name,
+            'lecture_hall_place' => $request->lecture_hall_place,
         ]);
   
         // User::create($request->all());
@@ -90,8 +90,8 @@ class HallController extends Controller
             'lecture_hall_place' => 'required', 
         ]);
 
-        DB::table('halls')->where('id',$request->id)->update([
-            'lecture_hall_name' => $request->lecture_hall_name, 
+        $hall->update([
+            'lecture_hall_name' => $request->lecture_hall_name,
             'lecture_hall_place' => $request->lecture_hall_place,
         ]);
   
